@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=3 uid="uid://csgc6r5nqxge6"]
+
+[ext_resource type="Script" path="res://QuizGUI.gd" id="1_x300l"]
+[ext_resource type="Script" path="res://QuestionLabel.gd" id="2_6bhye"]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( "1_x300l" )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+
+[node name="QuestionLabel" type="Label" parent="GridContainer"]
+offset_top = 136.0
+offset_right = 1024.0
+offset_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "When considering most conflict situations, I can usually see how both sides could be right."
+horizontal_alignment = 1
+script = ExtResource( "2_6bhye" )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GridContainer"]
+offset_left = 325.0
+offset_top = 302.0
+offset_right = 698.0
+offset_bottom = 600.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="PreviousButtonContainer" type="HBoxContainer" parent="GridContainer/HBoxContainer2"]
+offset_right = 108.0
+offset_bottom = 298.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="PreviousButton" type="Button" parent="GridContainer/HBoxContainer2/PreviousButtonContainer"]
+offset_top = 133.0
+offset_right = 108.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "    Previous    "
+
+[node name="SpacerHbox2" type="HBoxContainer" parent="GridContainer/HBoxContainer2"]
+offset_left = 112.0
+offset_right = 265.0
+offset_bottom = 298.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GridContainer/HBoxContainer2/SpacerHbox2"]
+offset_top = 136.0
+offset_right = 21.0
+offset_bottom = 162.0
+text = "     "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/HBoxContainer2/SpacerHbox2"]
+offset_left = 25.0
+offset_right = 153.0
+offset_bottom = 298.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Button1" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_top = 133.0
+offset_right = 18.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1"
+
+[node name="Button2" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_left = 22.0
+offset_top = 133.0
+offset_right = 40.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "2"
+
+[node name="Button3" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_left = 44.0
+offset_top = 133.0
+offset_right = 62.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "3"
+
+[node name="Button4" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_left = 66.0
+offset_top = 133.0
+offset_right = 84.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "4"
+
+[node name="Button5" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_left = 88.0
+offset_top = 133.0
+offset_right = 106.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "5"
+
+[node name="Button6" type="Button" parent="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer"]
+offset_left = 110.0
+offset_top = 133.0
+offset_right = 128.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "6
+"
+
+[node name="SpacerHbox" type="HBoxContainer" parent="GridContainer/HBoxContainer2"]
+offset_left = 269.0
+offset_right = 290.0
+offset_bottom = 298.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GridContainer/HBoxContainer2/SpacerHbox"]
+offset_top = 136.0
+offset_right = 21.0
+offset_bottom = 162.0
+text = "     "
+
+[node name="NextButtonContainer" type="HBoxContainer" parent="GridContainer/HBoxContainer2"]
+offset_left = 294.0
+offset_right = 373.0
+offset_bottom = 298.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="NextButton" type="Button" parent="GridContainer/HBoxContainer2/NextButtonContainer"]
+offset_top = 133.0
+offset_right = 79.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "    Next    "
+
+[connection signal="ready" from="GridContainer/QuestionLabel" to="." method="_on_question_label_ready"]
+[connection signal="tree_entered" from="GridContainer/QuestionLabel" to="." method="_on_question_label_tree_entered"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/PreviousButtonContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/SpacerHbox2/HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="GridContainer/HBoxContainer2/NextButtonContainer/NextButton" to="." method="_on_next_button_pressed"]

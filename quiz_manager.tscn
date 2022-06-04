@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdafly40s0vix"]
+
+[ext_resource type="Script" path="res://QuizManager.gd" id="1_wulu7"]
+[ext_resource type="PackedScene" uid="uid://csgc6r5nqxge6" path="res://QuizGUI.tscn" id="2_gfvhm"]
+
+[node name="QuizManager" type="Node2D"]
+script = ExtResource( "1_wulu7" )
+
+[node name="Control" parent="." instance=ExtResource( "2_gfvhm" )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1024.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
